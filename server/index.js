@@ -47,4 +47,4 @@ app.delete('/deleteUserAccount', userCtrl.delete_user_account);
 
 
 
-app.listen(process.env.PORT, () => { console.log(`Listening on port: ${process.env.PORT}`)});
+app.listen(process.env.PORT, () => { console.log(`Listening on port: 3000`)});
