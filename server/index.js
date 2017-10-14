@@ -13,6 +13,10 @@ const app = express();
 app.use(json());
 app.use(cors());
 
+
+const connectionString = process.env.DATABASE_URL; //Connects to heroku bro
+console.log(connectionString)
+massive(connectionString).then(db => app.set('db', db));
 // app.use(passport.initialize());
 // app.use(passport.session());
 // app.use(express.static('./public'));
@@ -40,9 +44,6 @@ app.put('/putMatch/:matchedID/:id/:gender/:SwipeMatch', userCtrl.put_match);
 app.delete('/deleteMatch', userCtrl.delete_match);
 app.delete('/deleteUserAccount', userCtrl.delete_user_account);
 
-const connectionString = process.env.DATABASE_URL; //Connects to heroku bro
-console.log(connectionString)
-massive(connectionString).then(db => app.set('db', db));
 
 
 
