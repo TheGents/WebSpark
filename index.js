@@ -1,5 +1,4 @@
 // import Axios from 'axios';
-
 const dotenv = require('dotenv').config();
 const express = require('express');
 const { json } = require('body-parser');
@@ -7,10 +6,11 @@ const massive = require('massive');
 const cors = require('cors');
 const path = require('path');
 const port = 3000
-const userCtrl = require('./ctrl/userCtrl.js')
-const loginCtrl = require('./ctrl/loginCtrl.js')
 
-const app = module.exports = express()
+const userCtrl = require('./ctrl/userCtrl');
+const loginCtrl = require('./ctrl/loginCtrl');
+
+const app = module.exports = express();
 app.use(json());
 app.use(cors());
 app.use(express.static(path.join(__dirname, 'public')));
@@ -45,8 +45,6 @@ app.put('/putMatch/:matchedID/:id/:gender/:SwipeMatch', userCtrl.put_match);
 
 app.delete('/deleteMatch', userCtrl.delete_match);
 app.delete('/deleteUserAccount', userCtrl.delete_user_account);
-
-
 
 
 app.listen(process.env.PORT, () => { console.log(`Listening on port: 3000`)});
