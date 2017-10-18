@@ -44,7 +44,7 @@ app.put('/putPreferences', userCtrl.put_user_preferences);
 app.put('/putMatch/:matchedID/:id/:gender/:SwipeMatch', userCtrl.put_match);
 
 app.delete('/deleteMatch', userCtrl.delete_match);
-app.delete('/deleteUserAccount', userCtrl.delete_user_account);
+app.delete('/deleteUserAccount/:id', userCtrl.delete_user_account);
 
 
 app.listen(process.env.PORT, () => { console.log(`Listening on port: 3000`)});
