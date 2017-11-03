@@ -40,6 +40,7 @@ app.get('/getmessage/:room_id', userCtrl.get_message);
 app.put('/putPics', userCtrl.put_user_pics);
 app.put('/putHome', userCtrl.put_user_profile);
 app.put('/putBio', userCtrl.put_user_bio);
+app.put('/putLocation', userCtrl.put_user_location);
 app.put('/putPreferences', userCtrl.put_user_preferences);
 app.put('/putMatch/:matchedID/:id/:gender/:SwipeMatch', userCtrl.put_match);
 
