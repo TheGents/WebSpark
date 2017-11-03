@@ -187,11 +187,11 @@ module.exports = {
     },
     put_user_location: (req,res) => {
         const db = req.app.get('db');
-        const { facebook_auth_id, city, numLocation } = req.body;
-        console.log('city', city);
+        const { facebook_auth_id, location, numLocation} = req.body;
+        console.log('city', location, numLocation);
         console.log('facebook_auth_id', facebook_auth_id);
-        console.log('numLocation', numLocation);
-        db.put_user_location([facebook_auth_id, city ]).then((data)=>res.status('200').send(data)).catch(()=> res.status('404').send());
+        // console.log('numLocation', numLocation);
+        db.put_user_location([facebook_auth_id, location, numLocation ]).then((data)=>res.status('200').send(data)).catch(()=> res.status('404').send());
     },
     put_user_preferences: (req,res) => {
         const db = req.app.get('db');
