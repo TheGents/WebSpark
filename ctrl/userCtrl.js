@@ -25,7 +25,8 @@ module.exports = {
     },
     post_user: (req,res) => {
         const db = req.app.get('db');
-        let { id, name, birthday, work, gender, picture, location, numLocation } = req.body;
+        let { id, name, birthday, work, gender, picture } = req.body.user;
+        let { location, numLocation } = req.body;
         
         console.log( 'id', id);
         function first(val) {
