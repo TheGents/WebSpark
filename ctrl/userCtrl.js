@@ -25,7 +25,7 @@ module.exports = {
     },
     post_user: (req,res) => {
         const db = req.app.get('db');
-        let { id, name, birthday, work, gender, picture } = req.body;
+        let { id, name, birthday, work, gender, picture, location, numLocation } = req.body;
         
         console.log( 'id', id);
         function first(val) {
@@ -54,7 +54,7 @@ module.exports = {
         // if(work) {
         //     works = work[0].position.name
         // }
-        db.post_user([id, name, katkatAge, work, gender, picture.data.url]).then((user)=>res.status('200').send(user)).catch(()=> res.status('200').send());
+        db.post_user([id, name, katkatAge, work, gender, picture.data.url, location, numLocation]).then((user)=>res.status('200').send(user)).catch(()=> res.status('200').send());
     },
     post_message: (req,res) => {
         const db = req.app.get('db');
