@@ -65,7 +65,10 @@ module.exports = {
     get_user_profile: (req,res) => {
         console.log('we are in the get_user_profile method');
         const db = req.app.get('db');
-        const { id } = req.params;
+        let { id, facebook_auth_id } = req.params;
+        if (facebook_auth_id) {
+            id = facebook_auth_id;
+        }
         console.log('we are in the get_user_profile method', id);
         db.get_user_profile([id]).then((data)=>res.status('200').send(data)).catch((error) => res.status('404').send(error));
     },
