@@ -212,8 +212,8 @@ module.exports = {
     },
     delete_match: (req,res) => {
         const db = req.app.get('db');
-        const { roomID } = req.params;
-        db.delete_match([roomID]).then((data)=>res.status('200').send(data)).catch(()=> res.status('404').send());
+        const { id } = req.params;
+        db.delete_match([id]).then((data)=>res.status('200').send(data)).catch(()=> res.status('404').send());
     },
     delete_user_account: (req,res) => {
         const db = req.app.get('db');
