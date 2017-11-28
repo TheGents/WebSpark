@@ -168,11 +168,11 @@ module.exports = {
                     console.log('1 ',facebook_auth_id, photo1);
                     db.put_user_pics([facebook_auth_id , photo1]).then((data)=>res.status('200').send(data)).catch(()=> res.status('404').send());
                 }
-                else if(photo2){
+                else if (photo2){
                     console.log('2 ',facebook_auth_id, photo2);
                     db.put_user_pics2([facebook_auth_id , photo2]).then((data)=>res.status('200').send(data)).catch(()=> res.status('404').send());
                 }
-                else if(photo3){
+                else if (photo3){
                     console.log('3 ',facebook_auth_id, photo3);
                     db.put_user_pics3([facebook_auth_id , photo3]).then((data)=>res.status('200').send(data)).catch(()=> res.status('404').send());
                 }
@@ -188,7 +188,7 @@ module.exports = {
     },
     put_user_location: (req,res) => {
         const db = req.app.get('db');
-        const { facebook_auth_id, location, numLocation} = req.body;
+        const { facebook_auth_id, location, numLocation } = req.body;
         console.log('city', location, numLocation);
         console.log('facebook_auth_id', facebook_auth_id);
         // console.log('numLocation', numLocation);
